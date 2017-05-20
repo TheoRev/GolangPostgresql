@@ -2,6 +2,7 @@ package main
 
 import (
 	"errors"
+	"fmt"
 	"time"
 )
 
@@ -33,6 +34,8 @@ func Crear(e Estudiante) error {
 	}
 
 	i, _ := r.RowsAffected()
+	fmt.Println(i, " filas afectadas.")
+
 	if i != 1 {
 		return errors.New("Error: se esperaba 1 fila afectada")
 	}
